@@ -6,6 +6,7 @@
     <input type=address #userAddress>
   </div>
   <button (click)="addAddress(userAddress.value)">Add by Address</button>
+  <button (click)="saveAddress(userAddress.value)">Save Geocache Info</button>
 </form>
 
 <div *ngIf="geocaches">

@@ -15,7 +15,7 @@ export class GeocachesComponent implements OnInit {
   // geocaches: Geocache[] = [];
 
   goToDetailPage(clickedGeocache: Geocache) {
-     this.router.navigate(['geocaches', clickedGeocache.person]);
+     this.router.navigate(['geocaches', clickedGeocache.address]);
    };
 
   ngOnInit() {
