@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Params } from '@angular/router';
+import { Location } from '@angular/common';
+import { Geocache } from '../geocache.model';
 
 @Component({
   selector: 'app-geocache-details',
@@ -6,10 +9,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./geocache-details.component.scss']
 })
 export class GeocacheDetailsComponent implements OnInit {
+  geocachePerson: string = null;
 
-  constructor() { }
+  constructor(private route: ActivatedRoute, private location: Location) {}
 
   ngOnInit() {
+    this.route.params.forEach((urlParameters) => {
+      this.geocachePerson = urlParameters['person'];
+    });
   }
 
 }

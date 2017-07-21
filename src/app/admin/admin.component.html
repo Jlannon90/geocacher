@@ -1,3 +1,13 @@
-<p>
-  admin works!
-</p>
+<h3>Add A Geocache</h3>
+
+<form>
+  <div class="address-section">
+    <label for="address">Add by Address</label>
+    <input type=address #userAddress>
+  </div>
+  <button (click)="addAddress(userAddress.value)">Add by Address</button>
+</form>
+
+<div *ngIf="geocaches">
+  <app-geocaches [childGeocaches]="geocaches"></app-geocaches>
+</div>

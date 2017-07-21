@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { Geocache } from '../geocache.model';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-geocaches',
@@ -6,8 +8,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./geocaches.component.scss']
 })
 export class GeocachesComponent implements OnInit {
+  @Input() childGeocaches;
 
-  constructor() { }
+  constructor(private router: Router){}
+
+  // geocaches: Geocache[] = [];
+
+  goToDetailPage(clickedGeocache: Geocache) {
+     this.router.navigate(['geocaches', clickedGeocache.person]);
+   };
 
   ngOnInit() {
   }

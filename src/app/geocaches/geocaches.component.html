@@ -1,3 +1,14 @@
-<p>
-  geocaches works!
-</p>
+<h3>
+  Geocaches
+</h3>
+
+<div *ngFor="let geocache of geocaches" (click)="goToDetailPage(geocache)">
+    <h5><em>{{geocache.address}}</em> by {{geocache.person}}</h5>
+</div>
+
+<h5> Address: {{childGeocaches.results[0].formatted_address}}</h5>
+<h5>Latitude: {{childGeocaches.results[0].geometry.location.lat}}</h5>
+<h5>Longitude: {{childGeocaches.results[0].geometry.location.lng}}</h5>
+<!-- <div *ngFor="let geocache of childGeocaches.geocaches;" class="photo">
+  <img src = {{photo.img_src}}/>
+</div> -->
