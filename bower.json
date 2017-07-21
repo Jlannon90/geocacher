@@ -1,0 +1,17 @@
+{
+  "name": "geocacher",
+  "description": "",
+  "main": "",
+  "authors": [
+    "James Lannon <jamesmlannon1990@live.com>"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
