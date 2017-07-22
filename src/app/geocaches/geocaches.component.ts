@@ -11,7 +11,7 @@ import { GeocacheService } from '../geocache.service';
   providers: [GeocacheService]
 })
 export class GeocachesComponent implements OnInit {
-  @Input() childGeocaches;
+  // @Input() childGeocaches;
   geocaches: FirebaseListObservable<any[]>;
 
   constructor(private router: Router, private geocacheService: GeocacheService){}

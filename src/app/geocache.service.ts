@@ -17,6 +17,7 @@ export class GeocacheService {
     return this.geocaches;
   }
   getGeocacheById(geocacheId: string){
+    // console.log(this.af.object('geocaches/' + geocacheId))
     return this.af.object('geocaches/' + geocacheId);
   }
 

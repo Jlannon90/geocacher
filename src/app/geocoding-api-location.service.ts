@@ -11,14 +11,6 @@ export class GeocodingApiLocationService {
 
   constructor(private http: Http, private geocacheService: GeocacheService) { }
 
-  getByAddress(address: string) {
-    return this.http.get("https://maps.googleapis.com/maps/api/geocode/json?address=" +address+ "&api_key=" +geoKey)
-  }
-
-  getByLatLng(lat: string, lng: string) {
-    return this.http.get("https://maps.googleapis.com/maps/api/geocode/json?latlng=" +lat+ "," +lng+ "&key=" +geoKey)
-  }
-
   saveGeoAddress(name: string, address: string) {
     return this.http.get("https://maps.googleapis.com/maps/api/geocode/json?address=" +address+ "&api_key=" +geoKey)
     .subscribe(response => {
@@ -41,6 +33,14 @@ export class GeocodingApiLocationService {
     });
   }
 
+  // These were to just display the entered geocache on the page, but it's a bit redundant and cluttered
+  // getByAddress(address: string) {
+  //   return this.http.get("https://maps.googleapis.com/maps/api/geocode/json?address=" +address+ "&api_key=" +geoKey)
+  // }
+  //
+  // getByLatLng(lat: string, lng: string) {
+  //   return this.http.get("https://maps.googleapis.com/maps/api/geocode/json?latlng=" +lat+ "," +lng+ "&key=" +geoKey)
+  // }
 
 
 }
