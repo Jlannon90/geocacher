@@ -12,12 +12,14 @@ import { GeocacheService } from '../geocache.service';
 })
 export class GeocachesComponent implements OnInit {
   @Input() childGeocaches;
+  geocaches: FirebaseListObservable<any[]>;
 
   constructor(private router: Router, private geocacheService: GeocacheService){}
   savedGeocaches: FirebaseListObservable <any[]> = null;
 
-  goToDetailPage(clickedGeocache: Geocache) {
-     this.router.navigate(['geocaches', clickedGeocache.address]);
+  goToDetailPage(clickedGeocache) {
+     this.router.navigate(['geocaches', clickedGeocache.$key]);
+     console.log(clickedGeocache.$key)
    };
 
    ngOnInit(){

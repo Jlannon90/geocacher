@@ -16,5 +16,8 @@ export class GeocacheService {
   getGeocache() {
     return this.geocaches;
   }
+  getGeocacheById(geocacheId: string){
+    return this.af.object('geocaches/' + geocacheId);
+  }
 
 }
