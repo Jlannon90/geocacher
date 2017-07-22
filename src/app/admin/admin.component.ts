@@ -13,16 +13,16 @@ export class AdminComponent implements OnInit {
   geocaches: any[]=null;
 
   constructor(private geocodingApiLocation: GeocodingApiLocationService) { }
-  addAddress(address: string) {
+  addAddress(address: string, name: string) {
     this.geocodingApiLocation.getByAddress(address).subscribe(response => {
       this.geocaches = response.json();
     });
     console.log(this.geocaches);
   }
 
-  saveAddress(address){
-    this.geocodingApiLocation.saveGeoAddress(address);
-    alert("The following address, " + address + " ,has been saved to the database.")
+  saveAddress(address, name){
+    this.geocodingApiLocation.saveGeoAddress(name, address);
+    alert("Hi " + name + ". The following address, " + address + ", has been saved to the database.")
   }
 
   ngOnInit() {

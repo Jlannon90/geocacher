@@ -1,12 +1,16 @@
 <h3>Add A Geocache</h3>
 
 <form>
+  <div class="user-name">
+    <label for="name">Enter your Name</label>
+    <input type=name #userName>
+  </div>
   <div class="address-section">
     <label for="address">Add by Address</label>
     <input type=address #userAddress>
   </div>
-  <button (click)="addAddress(userAddress.value)">Add by Address</button>
-  <button (click)="saveAddress(userAddress.value)">Save Geocache Info</button>
+  <button (click)="addAddress(userAddress.value, userName.value)">Add by Address</button>
+  <button (click)="saveAddress(userAddress.value, userName.value)">Save Geocache Info</button>
 </form>
 
 <div *ngIf="geocaches">

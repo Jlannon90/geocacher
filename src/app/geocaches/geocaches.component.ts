@@ -12,8 +12,6 @@ export class GeocachesComponent implements OnInit {
 
   constructor(private router: Router){}
 
-  // geocaches: Geocache[] = [];
-
   goToDetailPage(clickedGeocache: Geocache) {
      this.router.navigate(['geocaches', clickedGeocache.address]);
    };

@@ -15,14 +15,15 @@ export class GeocodingApiLocationService {
     return this.http.get("https://maps.googleapis.com/maps/api/geocode/json?address=" +address+ "&api_key=" +geoKey)
   }
 
-  saveGeoAddress(address: string) {
+  saveGeoAddress(name: string, address: string) {
     return this.http.get("https://maps.googleapis.com/maps/api/geocode/json?address=" +address+ "&api_key=" +geoKey)
     .subscribe(response => {
       let foundGeocache: Geocache;
       for(let cache of response.json().results) {
-        foundGeocache = new Geocache(cache.formatted_address, cache.geometry.location.lat, cache.geometry.location.lng);
+        foundGeocache = new Geocache(name, cache.formatted_address, cache.geometry.location.lat, cache.geometry.location.lng);
         this.geocacheService.addGeocache(foundGeocache);
       }
+      console.log(name);
     });
   }
 
