@@ -13,5 +13,8 @@ export class GeocacheService {
   addGeocache(newGeocache: Geocache) {
     this.geocaches.push(newGeocache);
   }
+  getGeocache() {
+    return this.geocaches;
+  }
 
 }
