@@ -1,10 +1,15 @@
-<h3>
-  Geocaches
-</h3>
+<div class="content">
+  <h3>
+    Geocaches
+  </h3>
 
-<div *ngFor="let geocache of savedGeocaches | async" (click)="goToDetailPage(geocache)">
-    <h5><em>{{geocache.address}}</em> by {{geocache.name}}</h5>
+  <div class="geo-box">
+    <div class="geocaches" *ngFor="let geocache of savedGeocaches | async" (click)="goToDetailPage(geocache)">
+        <h5>{{geocache.address}} by {{geocache.name}}</h5>
+    </div>
+  </div>  
 </div>
+
 <!-- <h5> Address: {{childGeocaches.results[0].formatted_address}}</h5>
 <h5>Latitude: {{childGeocaches.results[0].geometry.location.lat}}</h5>
 <h5>Longitude: {{childGeocaches.results[0].geometry.location.lng}}</h5> -->

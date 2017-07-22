@@ -1,4 +1,12 @@
-<h5>This geocache was added by: {{(geocacheToDisplay | async)?.name}}</h5>
-<h5>{{(geocacheToDisplay | async)?.address}}</h5>
-<h5>{{(geocacheToDisplay | async)?.latitude}}</h5>
-<h5>{{(geocacheToDisplay | async)?.longitude}}</h5>
+<div class="content">
+  <h3>
+    Geocache Info
+  </h3>
+
+  <div class="info">
+    <h5>This geocache was added by: <em>{{(geocacheToDisplay | async)?.name}}</em></h5>
+    <h5>Street Address: <em>{{(geocacheToDisplay | async)?.address}}</em></h5>
+    <h5>Latitude: <em>{{(geocacheToDisplay | async)?.latitude}}</em></h5>
+    <h5>Longitude: <em>{{(geocacheToDisplay | async)?.longitude}}</em></h5>
+  </div>
+</div>

@@ -1,0 +1,16 @@
+.content {
+  display: flex;
+  flex-direction: column;
+  h3 {
+    margin-left: 40px;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 30px;
+  }
+  .info {
+    align-self: center;
+    font-family: 'Lato', sans-serif;
+    h5 {
+      font-size: 16px;
+    }
+  }
+}

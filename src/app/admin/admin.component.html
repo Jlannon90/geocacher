@@ -1,24 +1,40 @@
-<h3>Add A Geocache</h3>
+<div class="content">
+  <h3>Add A Geocache</h3>
+  <form>
+    <div class="section">
+      <h4>Add your name</h4>
+      <div class="input-section">
+        <label for="name">Name:</label>
+        <input type=name #userName>
+      </div>
+    </div>
+    <div class="section">
+      <h4>Add by address</h4>
+      <div class="input-section">
+        <label for="address">Address:</label>
+        <input type=address #userAddress>
+      </div>
+      <button (click)="saveAddress(userAddress.value, userName.value)">Save Geocache</button>
+    </div>
+    <!-- <button (click)="addAddress(userAddress.value, userName.value)">Add by Address</button> -->
 
-<form>
-  <div class="user-name">
-    <label for="name">Enter your Name</label>
-    <input type=name #userName>
-  </div>
-  <div class="address-section">
-    <label for="address">Add by Address</label>
-    <input type=address #userAddress>
-  </div>
-  <!-- <button (click)="addAddress(userAddress.value, userName.value)">Add by Address</button> -->
-  <button (click)="saveAddress(userAddress.value, userName.value)">Save Geocache Info</button>
-  <div class="latlng-section">
-    <label for="latlng">Add by Latitude and Longitude</label>
-    <input type="lat" #userLat>
-    <input type="lng" #userLng>
-  </div>
-  <!-- <button (click)="addLatLng(userLat.value, userLng.value, userName.value)">Add by Lat and Lng</button> -->
-  <button (click)="saveLatLng(userLat.value, userLng.value, userName.value)">Save Geocache Info</button>
-</form>
+    <div class="section">
+      <h4>Add by latitude and longitude</h4>
+      <div class="input-section">
+        <label for="lat">Latitude:</label>
+        <input type="lat" #userLat>
+        <label for="lng">Longitude:</label>
+        <input type="lng" #userLng>
+      </div>
+      <button (click)="saveLatLng(userLat.value, userLng.value, userName.value)">Save Geocache</button>
+    </div>
+    <!-- <button (click)="addLatLng(userLat.value, userLng.value, userName.value)">Add by Lat and Lng</button> -->
+
+  </form>
+</div>
+
+
+
 
 <!-- <div *ngIf="geocaches">
   <app-geocaches [childGeocaches]="geocaches"></app-geocaches>

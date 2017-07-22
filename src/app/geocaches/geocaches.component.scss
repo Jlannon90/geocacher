@@ -1,0 +1,22 @@
+.content {
+  display: flex;
+  flex-direction: column;
+  h3 {
+    margin-left: 40px;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 30px;
+  }
+  .geo-box {
+    align-self: center;
+    .geocaches {
+      font-family: 'Lato', sans-serif;
+      h5 {
+        font-size: 16px;
+        &:hover{
+          font-size: 18px;
+        }
+      }
+
+    }
+  }
+}
