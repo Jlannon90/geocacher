@@ -15,6 +15,10 @@ export class GeocodingApiLocationService {
     return this.http.get("https://maps.googleapis.com/maps/api/geocode/json?address=" +address+ "&api_key=" +geoKey)
   }
 
+  getByLatLng(lat: string, lng: string) {
+    return this.http.get("https://maps.googleapis.com/maps/api/geocode/json?latlng=" +lat+ "," +lng+ "&key=" +geoKey)
+  }
+
   saveGeoAddress(name: string, address: string) {
     return this.http.get("https://maps.googleapis.com/maps/api/geocode/json?address=" +address+ "&api_key=" +geoKey)
     .subscribe(response => {
@@ -23,8 +27,20 @@ export class GeocodingApiLocationService {
         foundGeocache = new Geocache(name, cache.formatted_address, cache.geometry.location.lat, cache.geometry.location.lng);
         this.geocacheService.addGeocache(foundGeocache);
       }
-      console.log(name);
     });
   }
+
+  saveGeoLatLng(name: string, lat: string, lng: string) {
+    return this.http.get("https://maps.googleapis.com/maps/api/geocode/json?latlng=" +lat+ "," +lng+ "&key=" +geoKey)
+    .subscribe(response => {
+      let foundGeocache: Geocache;
+      for(let cache of response.json().results) {
+        foundGeocache = new Geocache(name, cache.formatted_address, cache.geometry.location.lat, cache.geometry.location.lng);
+        this.geocacheService.addGeocache(foundGeocache);
+      }
+    });
+  }
+
+
 
 }

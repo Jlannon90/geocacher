@@ -11,6 +11,13 @@
   </div>
   <button (click)="addAddress(userAddress.value, userName.value)">Add by Address</button>
   <button (click)="saveAddress(userAddress.value, userName.value)">Save Geocache Info</button>
+  <div class="latlng-section">
+    <label for="latlng">Add by Latitude and Longitude</label>
+    <input type="lat" #userLat>
+    <input type="lng" #userLng>
+  </div>
+  <button (click)="addLatLng(userLat.value, userLng.value, userName.value)">Add by Lat and Lng</button>
+  <button (click)="saveLatLng(userLat.value, userLng.value, userName.value)">Save Geocache Info</button>
 </form>
 
 <div *ngIf="geocaches">

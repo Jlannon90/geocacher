@@ -20,9 +20,20 @@ export class AdminComponent implements OnInit {
     console.log(this.geocaches);
   }
 
+  addLatLng(lat: string, lng: string, name: string) {
+    this.geocodingApiLocation.getByLatLng(lat, lng).subscribe(response => {
+      this.geocaches = response.json();
+    });
+  }
+
   saveAddress(address, name){
     this.geocodingApiLocation.saveGeoAddress(name, address);
     alert("Hi " + name + ". The following address, " + address + ", has been saved to the database.")
+  }
+
+  saveLatLng(lat, lng, name){
+    this.geocodingApiLocation.saveGeoLatLng(name, lat, lng);
+    alert("Hi " + name + ". The following address with a latitude of " + lat + " and longitude of " + lng + ", has been saved to the database.")
   }
 
   ngOnInit() {
